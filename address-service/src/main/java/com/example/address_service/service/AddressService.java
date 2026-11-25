@@ -20,6 +20,8 @@ public class AddressService {
     public AddressResponse getAddressByEmployeeId(int employeeId) {
         Address add = repo.findAddressByEmployeeId(employeeId);
         AddressResponse ares = mmap.map(add, AddressResponse.class);
+        if (ares == null)
+            return null;
         return ares;
     }
 }

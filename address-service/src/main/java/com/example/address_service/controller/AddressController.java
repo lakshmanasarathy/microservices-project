@@ -19,7 +19,7 @@ public class AddressController {
     AddressService aService;
 
     @GetMapping("/address/{employeeId}")
-    public ResponseEntity<AddressResponse> getResponseById(@PathVariable("employeeId") int id) {
+    public ResponseEntity<AddressResponse> getAddressEmployeeById(@PathVariable("employeeId") int id) {
         AddressResponse ares = aService.getAddressByEmployeeId(id);
         return ResponseEntity.status(HttpStatus.OK).body(ares);
     }
